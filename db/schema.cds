@@ -50,6 +50,7 @@ entity Incidents : managed, identified {
   priority                : Association to one Priority       @title : '{i18n>Priority}';
   incidentStatus          : Association to one IncidentStatus @title : '{i18n>IncidentStatus}';
   description             : String(1000)                      @title : '{i18n>IncidentDescription}';
+  location                : String(100)                       @title : '{i18n>Location}';
   assignedIndividual      : Association to one Individual;
   incidentFlow            : Association to many IncidentFlow
                               on incidentFlow.incident = $self;

@@ -35,7 +35,14 @@ annotate service.Incidents with @(UI : {
             $Type : 'UI.DataField',
             Value : category_code
         },
-        //insert your line item enhancement here
+                { 
+            $Type : 'UI.DataField',
+            Value : title 
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : location
+        },
 
     ],
 
@@ -48,8 +55,7 @@ annotate service.Incidents with @(UI : {
     SelectionFields : [
         incidentStatus_code,
         priority_code,
-        //insert your selection fields enhancement here
-
+        location
     ],
 
     //	Information for the header area of an entity representation
@@ -82,6 +88,9 @@ annotate service.Incidents with @(UI : {
                 Value : category_code
             },
             {
+                Value : location
+            },
+            {
                 $Type  : 'UI.DataFieldForAnnotation',
                 Target : 'assignedIndividual/@Communication.Contact',
                 Label  : '{i18n>AssignedContact}'
@@ -100,7 +109,14 @@ annotate service.Incidents with @(UI : {
                 $Type : 'UI.DataField',
                 Value : title
             },
-            //insert your field group enhancement here 
+            {   $Type : 'UI.DataField',
+                Value : description 
+            },
+            {   
+                $Type : 'UI.DataField',
+                Value : location 
+            }
+           
             
        ]
     },

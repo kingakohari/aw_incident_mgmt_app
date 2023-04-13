@@ -1,7 +1,7 @@
 {
   "name": "fiori_elements_tutorial",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
+  "description": "An incident management app.",
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,

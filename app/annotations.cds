@@ -115,14 +115,28 @@ annotate service.Incidents with @(UI : {
             {   
                 $Type : 'UI.DataField',
                 Value : location 
-            }
-           
-            
+            }  
        ]
     },
 
     //insert your new field group here
-
+    FieldGroup #GeneralInformation  : {
+    $Type : 'UI.FieldGroupType',
+    Data : [
+        {
+            $Type : 'UI.DataField',
+            Value : priority_code,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : category_code,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : incidentStatus_code,
+        },
+    ],
+    },
 
     //object page content area is organized by facets referring to e.g. fieldgroup and lineItem annotations
     //https://github.com/SAP/odata-vocabularies/blob/master/vocabularies/UI.md#Facet    
@@ -139,7 +153,12 @@ annotate service.Incidents with @(UI : {
                     Target : '@UI.FieldGroup#IncidentDetails'
                 },
                 //insert your reference facet enhancement here
-
+                {
+                    $Type : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#GeneralInformation',
+                    Label : '{i18n>GeneralInformation}',
+                    ID : 'GeneralInformationFacet',
+                },
             ]
         },
         //this facet shows a table on the object page by referring to a lineItem annotation via association incidentFlow
@@ -157,7 +176,11 @@ annotate service.Incidents with @(UI : {
 annotate service.IncidentFlow with @(UI : {
     LineItem : [
         //insert your column enhancement here
-        
+        {
+            $Type : 'UI.DataField',
+            Value : stepStatus,
+            Criticality : criticality,
+        },     
         {
             $Type : 'UI.DataField',
             Value : processStep

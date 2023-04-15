@@ -1,0 +1,8 @@
+<core:FragmentDefinition 
+xmlns:core="sap.ui.core" 
+xmlns="sap.gantt.simple" 
+xmlns:ui="sap.ui.table"
+xmlns:m="sap.m"
+>
+	<m:Image src="https://www.whereig.com/germany/berlin-location-map.gif" />
+</core:FragmentDefinition>

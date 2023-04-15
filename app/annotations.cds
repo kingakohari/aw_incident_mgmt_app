@@ -19,7 +19,8 @@ annotate service.Incidents with @(UI : {
     LineItem : [
         {
             $Type : 'UI.DataField',
-            Value : identifier
+            Value : identifier,
+            ![@HTML5.CssDefaults] : {width : '80px'}
         },
         {
             $Type                     : 'UI.DataField',
@@ -35,7 +36,7 @@ annotate service.Incidents with @(UI : {
             $Type : 'UI.DataField',
             Value : category_code
         },
-                { 
+        { 
             $Type : 'UI.DataField',
             Value : title 
         },
